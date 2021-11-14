@@ -1,5 +1,11 @@
+@font-face {
+    font-family: "FiraSans";
+    src: url("../assets/FiraSans-Medium.otf")
+}
+
 body{
     background-image: url(https://fondosmil.com/fondo/456.jpg);
+    font-family: "FiraSans"
 }
 
 input {
