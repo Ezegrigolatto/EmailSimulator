@@ -72,9 +72,10 @@ export default function Mailsender() {
         document.getElementById("subject").classList.remove("valid");
         document.getElementById("message").classList.remove("valid");
         setMessage("Your message has been sent successfully.");
-        document.getElementById("form").reset();
+        document.getElementById("address").classList.add ("writing");
         setTimeout(() => {
-        setMessage("");
+          setMessage("");
+          window.location.reload()
        
         }, 2000);
         }
