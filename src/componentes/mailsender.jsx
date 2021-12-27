@@ -101,7 +101,6 @@ export default function Mailsender() {
               required
             />
           </label>
-
           <label>
             <h3>Subject</h3>
             <input
