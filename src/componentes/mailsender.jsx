@@ -68,13 +68,14 @@ export default function Mailsender() {
     document.getElementById("spinner").style.display = "block";
     setTimeout(() => {
         document.getElementById("spinner").style.display = "none";
+        document.getElementById("address").classList.remove("valid");
+        document.getElementById("subject").classList.remove("valid");
+        document.getElementById("message").classList.remove("valid");
         setMessage("Your message has been sent successfully.");
         document.getElementById("form").reset();
         setTimeout(() => {
         setMessage("");
-        document.getElementById("address").classList.remove("valid");
-        document.getElementById("subject").classList.remove("valid");
-        document.getElementById("message").classList.remove("valid");
+       
         }, 2000);
         }
         , 2500);
