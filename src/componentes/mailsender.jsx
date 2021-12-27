@@ -71,8 +71,10 @@ export default function Mailsender() {
         document.getElementById("address").classList.remove("valid");
         document.getElementById("subject").classList.remove("valid");
         document.getElementById("message").classList.remove("valid");
-        setMessage("Your message has been sent successfully.");
         document.getElementById("address").classList.add ("writing");
+        document.getElementById("subject").classList.add ("writing");
+        document.getElementById("message").classList.add ("writing");
+        setMessage("Your message has been sent successfully.");
         setTimeout(() => {
           setMessage("");
           window.location.reload()
