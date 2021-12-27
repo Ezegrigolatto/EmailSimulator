@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./mailsender.css";
+import swal from 'sweetalert';
+
 
 export default function Mailsender() {
   const [error, setError] = useState("");
@@ -15,11 +17,30 @@ export default function Mailsender() {
       e.target.className = "invalid";
       setError(`Please, complete ${e.target.name} input.`);
     }
-    setTimeout(() => {
-        setError("");
-        }
-    , 3000);
   };
+
+  const handleDiscard = (e) => {
+    e.preventDefault();
+    swal({
+      title: "Are you sure?",
+      text: "Once discard, you will write all inputs again!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("All inputs were deleted!", {
+          icon: "success",
+        })
+        .then(() => {
+          window.location.reload();
+        });
+      } else {
+        swal("You can continue writing.");
+      }
+    });
+  }
 
   const handleEmail = (e) => {
     if (
@@ -27,14 +48,11 @@ export default function Mailsender() {
         e.target.value
       )
     ) {
+      setError("");
       e.target.className = "valid";
     } else {
       (e.target.className = "invalid")
         setError(`Please, put a valid Email.`);
-        setTimeout(() => {
-            setError("");
-            }
-        , 2000);
     }
   };
 
@@ -54,18 +72,21 @@ export default function Mailsender() {
         document.getElementById("form").reset();
         setTimeout(() => {
         setMessage("");
+        document.getElementById("address").classList.remove("valid");
+        document.getElementById("subject").classList.remove("valid");
+        document.getElementById("message").classList.remove("valid");
         }, 2000);
         }
-        , 2000);
+        , 2500);
     } else {
-        setError("Please, control all inputs.");
+        setError("Please, complete all inputs.");
     }
   }
 
   return (
     <div className="container">
       <h1 className="title">E-Mail simulator</h1>
-      <div>
+      <div className="form">
         <form id="form">
           <label>
             <h3>Address</h3>
@@ -113,7 +134,7 @@ export default function Mailsender() {
             <p className="send">{message}</p>
           <div className="btnContainer">
             <button className="sendBtn" type="submit" onClick={handleSend}>Send</button>
-            <button className="discard" type="reset">Discard</button>
+            <button className="discard" onClick={handleDiscard}>Discard</button>
           </div>
         </form>
       </div>
