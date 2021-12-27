@@ -225,4 +225,12 @@ label {
     .writing{
         width: 12rem;
     }
+
+    input {
+        width: 12rem;
+    }
+
+    textarea {
+        width: 12rem;
+    }
 }
