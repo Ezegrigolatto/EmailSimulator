@@ -82,7 +82,7 @@ export default function Mailsender() {
     } else {
         setError("Please, complete all inputs.");
     }
-  }
+  } 
 
   return (
     <div className="container">
