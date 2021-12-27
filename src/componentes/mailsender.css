@@ -209,4 +209,20 @@ label {
         height: 6rem;
         margin-top: -2rem;
     }
+
+    .invalid {
+        transition: border-color 0.8s;
+        border: 2px solid;
+        border-color: #f00;
+        width: 12rem;
+    }
+    .valid{
+        transition: border-color 0.8s;
+        border: 2px solid;
+        border-color: rgb(2, 158, 2);
+        width: 12rem;
+    }
+    .writing{
+        width: 12rem;
+    }
 }

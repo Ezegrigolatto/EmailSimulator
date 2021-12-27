@@ -71,9 +71,6 @@ export default function Mailsender() {
         document.getElementById("address").classList.remove("valid");
         document.getElementById("subject").classList.remove("valid");
         document.getElementById("message").classList.remove("valid");
-        document.getElementById("address").classList.add("writing");
-        document.getElementById("subject").classList.add("writing");
-        document.getElementById("message").classList.add("writing");
         setMessage("Your message has been sent successfully.");
         document.getElementById("form").reset();
         setTimeout(() => {
@@ -133,8 +130,10 @@ export default function Mailsender() {
             />
           <div className="spinner" id="spinner"></div>
           </label>
+          <div className = "mensajes">
           <p className="error">{error}</p>
             <p className="send">{message}</p>
+          </div>
           <div className="btnContainer">
             <button className="sendBtn" type="submit" onClick={handleSend}>Send</button>
             <button className="discard" onClick={handleDiscard}>Discard</button>
