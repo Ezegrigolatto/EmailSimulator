@@ -182,7 +182,7 @@ label {
 @media screen and (max-height: 650px) {
     .container {
         width: 75vw;
-        height: 80vh;
+        height: 100vh;
         margin-top:3rem;
         display: flex;
         flex-direction: column;
