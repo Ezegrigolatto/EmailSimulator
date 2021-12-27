@@ -63,7 +63,7 @@ export default function Mailsender() {
         document.getElementById("address").className === "valid" &&
         document.getElementById("subject").className === "valid" &&
         document.getElementById("message").className === "valid"
-    )
+    ) 
      {
     document.getElementById("spinner").style.display = "block";
     setTimeout(() => {
