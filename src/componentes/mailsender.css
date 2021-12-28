@@ -171,11 +171,28 @@ label {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
-    input{
-        width: 100%;
+    .invalid {
+        transition: border-color 0.8s;
+        border: 2px solid;
+        border-color: #f00;
+        width: 12rem;
     }
-    textarea{
-        width: 100%;
+    .valid{
+        transition: border-color 0.8s;
+        border: 2px solid;
+        border-color: rgb(2, 158, 2);
+        width: 12rem;
+    }
+    .writing{
+        width: 12rem;
+    }
+
+    input {
+        width: 12rem;
+    }
+
+    textarea {
+        width: 12rem;
     }
 }
 
